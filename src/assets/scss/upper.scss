@@ -78,12 +78,21 @@
 
         .scroll-container {
             position: absolute;
-            bottom: 118px;
-
+            bottom: 320px;
+            left: -48px;
+            transform: rotate( -90deg);
+            display: flex;
+            align-items: center;
+            z-index: 1;
+            .hscroll-line{
+                height: 2px;
+                width: 80px;
+                background: linear-gradient( 180deg, #09F4F4 0%, #00C9E0 100%);
+                border-radius: 13px;
+                display: inline-block;
+                margin-right: 15px;
+            }
             .scroll-text {
-                position: relative;
-                bottom: 0;
-                left: 0;
                 font-family: Larsseit;
                 font-style: normal;
                 font-weight: bold;
@@ -93,21 +102,6 @@
                 color: $white-color;
                 opacity: 0.9;
                 text-transform: uppercase;
-                transform: rotate(-90deg);
-                z-index: 99999;
-
-                &::after {
-                    content: ' ';
-                    position: absolute;
-                    height: 80px;
-                    left: 50%;
-                    top: 15px;
-                    z-index: 99999;
-                    transform: translate(-50%, 15px);
-                    width: 2px;
-                    background: linear-gradient(180deg, $light-blue 0%, $primary-color 100%);
-                    border-radius: 13px;
-                }
             }
         }
     }
@@ -171,42 +165,58 @@
                 bottom: 150px;
                 right: 0;
             }
-
+            
             .scroll-container {
                 position: absolute;
                 bottom: 262px;
-
-                .scroll-text {
+                transform: rotate( -90deg);
+                display: flex;
+                align-items: center;
+                z-index: 1;
+                .hscroll-line{
                     position: relative;
-                    bottom: 0;
-                    left: 0;
+                    height: 2px;
+                    width: 80px;
+                    background: rgba(0, 201, 224, .5);
+                    border-radius: 13px;
+                    display: inline-block;
+                    margin-right: 15px;
+                    overflow: hidden;
+                    &::after{
+                        content: '';
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        background: linear-gradient( 180deg, #09F4F4 0%, #00C9E0 100%);
+                        width: 80px;
+                        height: 2px;
+                        animation: move 2s infinite;
+                    }
+                }
+                .scroll-text {
                     font-family: Larsseit;
                     font-style: normal;
                     font-weight: bold;
                     font-size: 15px;
                     line-height: 190%;
-                    /* or 28px */
                     letter-spacing: 0.05em;
                     color: $white-color;
                     opacity: 0.9;
                     text-transform: uppercase;
-                    transform: rotate(-90deg);
-                    z-index: 99999;
-
-                    &::after {
-                        content: ' ';
-                        position: absolute;
-                        height: 80px;
-                        left: 50%;
-                        top: 15px;
-                        z-index: 99999;
-                        transform: translate(-50%, 15px);
-                        width: 2px;
-                        background: linear-gradient(180deg, $light-blue 0%, $primary-color 100%);
-                        border-radius: 13px;
-                    }
                 }
             }
         }
     }
+}
+
+@keyframes move {
+	0% {
+		transform: translate3d(100%, 0, 0)
+	}
+	60% {
+		transform: translate3d(100%, 0, 0)
+	}
+	100% {
+		transform: translate3d(-100%, 0, 0)
+	}
 }
