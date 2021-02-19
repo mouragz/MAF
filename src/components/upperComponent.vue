@@ -1,7 +1,29 @@
 <template>
   <section class="upper-section main-image">
-    <div class="container container-sm container-md container-lg position-relative upper-section-container">
-      <headerComponent />
+    <div
+      class="container container-sm container-md container-lg position-relative upper-section-container"
+    >
+      <div class="header">
+        <a href="#" target="_blank" class="logo">
+          <img src="@/assets/images/NT.svg" alt="logo" />
+        </a>
+        <div class="d-flex align-center">
+          <a href="#" target="_blank">
+            <img
+              src="@/assets/images/search.svg"
+              class="search-icon"
+              alt="Search Logo"
+            />
+          </a>
+          <button
+            id="menu"
+            @click.prevent="toggle"
+            class="btn"
+          >
+            Menu
+          </button>
+        </div>
+      </div>
       <div class="d-flex flex-column justify-center trips-section-description">
         <h1 class="title">Night Trips</h1>
         <h2 class="sub-title">WE GOT TRIPS FOR THE TRIPPSTER IN YOU</h2>
@@ -13,25 +35,17 @@
         </p>
       </div>
       <div class="social-icons">
-        <a 
-          href="#"
-          title="twitter"
-          target="_blank">
+        <a href="#" title="twitter" target="_blank">
           <img src="@/assets/images/twitter.svg" alt="twitter" />
         </a>
-        <a
-          href="#"
-          title="instagram"
-          target="_blank">
+        <a href="#" title="instagram" target="_blank">
           <img
             width="20px"
             src="@/assets/images/instagram.svg"
-            alt="instagram"/>
+            alt="instagram"
+          />
         </a>
-        <a
-          href="#"
-          target="_blank"
-          title="facebook">
+        <a href="#" target="_blank" title="facebook">
           <img src="@/assets/images/facebook.svg" alt="facebook" />
         </a>
       </div>
@@ -44,17 +58,15 @@
   </section>
 </template>
 <script>
-
-import headerComponent from "./headerComponent";
-
 export default {
-  components: {
-    headerComponent,
+  data: () => ({
+    isMenuActive: false,
+  }),
+  methods: {
+    toggle() {
+      this.$emit("OpenSidebar");
+    },
   },
-  data() {
-    return {};
-  },
-  methods: {},
   mounted() {},
 };
 </script>

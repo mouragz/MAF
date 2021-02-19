@@ -158,16 +158,16 @@ img {
     100% {right: -10px;}
 }
 @keyframes example2 {
-    0% {background: $primary-color;color: #fff;}
-    25% {background: $primary-color;color: #fff;}
-    50% {background: $primary-color;color: #fff;}
-    100% {background-color: #fff; color: $primary-color}
+    0% {background: $primary-color;color: $white-color;}
+    25% {background: $primary-color;color: $white-color;}
+    50% {background: $primary-color;color: $white-color;}
+    100% {background-color: $white-color; color: $primary-color}
 }
 @keyframes example2-out {
-    0% {background-color: #fff; color: $primary-color}
-    25% {background: $primary-color;color: #fff;}
-    50% {background: $primary-color;color: #fff;}
-    100% {background: $primary-color;color: #fff;}
+    0% {background-color: $white-color; color: $primary-color}
+    25% {background: $primary-color;color: $white-color;}
+    50% {background: $primary-color;color: $white-color;}
+    100% {background: $primary-color;color: $white-color;}
 }
 
 
@@ -220,6 +220,12 @@ img {
             margin-bottom: 30px;
             text-transform: uppercase;
         }
+    }
+}
+
+.sidebar-panel-nav {
+    a:hover {
+       color: $primary-color;
     }
 }
 
