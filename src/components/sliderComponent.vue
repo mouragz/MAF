@@ -15,10 +15,12 @@
       </div>
       <div class="slider-nav">
         <button
+          aria-label="previous"
           class="btn-slider prev"
           @click.prevent="changeSlide(0)"
         ></button>
         <button
+          aria-label="next"
           class="btn-slider next"
           @click.prevent="changeSlide(1)"
         ></button>

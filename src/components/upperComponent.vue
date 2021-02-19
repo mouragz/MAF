@@ -4,7 +4,7 @@
       <headerComponent />
       <div class="d-flex flex-column justify-center trips-section-description">
         <h1 class="title">Night Trips</h1>
-        <h3 class="sub-title">WE GOT TRIPS FOR THE TRIPPSTER IN YOU</h3>
+        <h2 class="sub-title">WE GOT TRIPS FOR THE TRIPPSTER IN YOU</h2>
         <p>
           Neque, eros commodo, nascetur ullamcorper vitae. Tincidunt ut
           venenatis, volutpat lorem ut faucibus mauris, quisque. Integer gravida

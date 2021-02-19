@@ -28,7 +28,7 @@
 $primary-color : #00C9E0;
 $secondary-color : #41ead4;
 $light-blue : #09F4F4;
-$white-color: #fff;
+$white-color: #FFFFFF;
 $black-color: #011627;
 
 $dark-blue-color: rgba(0, 201, 224, 0.2);
@@ -45,7 +45,10 @@ body {
     color: $white-color;
     background-color: $black-color;
 }
-
+img {
+    height: auto;
+    width: 100%;
+  }
 .position-relative {
     position: relative;
 }
