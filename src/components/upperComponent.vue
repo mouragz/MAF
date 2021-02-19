@@ -36,8 +36,8 @@
         </a>
       </div>
       <div class="scroll-container">
+        <span class="hscroll-line"></span>
         <span class="scroll-text">scroll</span>
-         <span class="hscroll-line"></span>
       </div>
     </div>
     <div class="divider"></div>
