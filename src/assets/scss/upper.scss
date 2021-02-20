@@ -33,14 +33,19 @@
     }
 
     .trips-section-description {
+        position: relative;
+        z-index: 1;
+        top: 25%;
+        width: 70%;
+        margin: auto;
         .title {
             font-family: Noe Display;
             font-style: normal;
             font-weight: bold;
             font-size: 60px;
-            margin-top: 60px;
+            margin-bottom: 15px;
             text-align: center;
-            line-height: 100px;
+            line-height: 1;
             color: $white-color;
         }
 
@@ -49,7 +54,7 @@
             font-style: normal;
             font-weight: bold;
             font-size: 14px;
-            line-height: 12px;
+            line-height: 1;
             text-align: center;
             text-transform: uppercase;
         }
@@ -60,7 +65,7 @@
             font-weight: normal;
             font-size: 17px;
             margin-top: 25px;
-            line-height: 16px;
+            line-height: 1;
             text-align: center;
             color: $white-color;
             width: 100%;
@@ -74,6 +79,8 @@
 
         .social-icons {
             flex-direction: column;
+            bottom: 250px;
+            right: 15px;
         }
 
         .scroll-container {
@@ -101,7 +108,7 @@
                     background: linear-gradient( 180deg, #09F4F4 0%, #00C9E0 100%);
                     width: 80px;
                     height: 2px;
-                    animation: move 2s infinite;
+                    animation: scroll-move 2s infinite;
                 }
             }
             .scroll-text {
@@ -133,15 +140,6 @@
 @media screen and (min-width: 992px) {
     .upper-section {
         .header {
-            @extend .d-flex,
-            .align-center,
-            .space-between;
-            padding-top: 40px;
-
-            .logo {
-                width: 60px;
-            }
-
             .search-icon {
                 width: 18px;
                 margin-right: 40px;
@@ -149,8 +147,9 @@
         }
 
         .trips-section-description {
+            top: 10%;
             min-height: calc(100vh - 248px);
-
+            width: 100%;
             .title {
                 font-size: 120px;
                 line-height: 153px;
@@ -174,54 +173,18 @@
 
         .upper-section-container {
             .social-icons {
-                bottom: 150px;
+                bottom: 192px;
                 right: 0;
             }
             
             .scroll-container {
-                position: absolute;
                 bottom: 262px;
-                transform: rotate( -90deg);
-                display: flex;
-                align-items: center;
-                z-index: 1;
-                .hscroll-line{
-                    position: relative;
-                    height: 2px;
-                    width: 80px;
-                    background: rgba(0, 201, 224, .5);
-                    border-radius: 13px;
-                    display: inline-block;
-                    margin-right: 15px;
-                    overflow: hidden;
-                    &::after{
-                        content: '';
-                        position: absolute;
-                        bottom: 0;
-                        left: 0;
-                        background: linear-gradient( 180deg, #09F4F4 0%, #00C9E0 100%);
-                        width: 80px;
-                        height: 2px;
-                        animation: move 2s infinite;
-                    }
-                }
-                .scroll-text {
-                    font-family: Larsseit;
-                    font-style: normal;
-                    font-weight: bold;
-                    font-size: 15px;
-                    line-height: 190%;
-                    letter-spacing: 0.05em;
-                    color: $white-color;
-                    opacity: 0.9;
-                    text-transform: uppercase;
-                }
             }
         }
     }
 }
 
-@keyframes move {
+@keyframes scroll-move {
 	0% {
 		transform: translate3d(100%, 0, 0)
 	}
