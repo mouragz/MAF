@@ -145,7 +145,7 @@
                     transform: translate(-5%,-50%);
                     left: 0;
                     width: 206px;
-                    z-index: 99999;
+                    z-index: 9;
                     .slider-number {
                         &::before {
                             content: "";
@@ -179,7 +179,7 @@
 
                 .img-slider {
                     position: relative;
-                    z-index: 9999;
+                    z-index: 9;
 
                     img {
                         width: 100%;
@@ -203,7 +203,7 @@
                     position: absolute;
                     bottom: -8px;
                     right: 0;
-                    z-index: 9999999999;
+                    z-index: 99;
 
                     .btn-slider {
                         width: 65px;
@@ -331,7 +331,7 @@
                         top: 50%;
                         transform: translate(-50%);
                         width: 206px;
-                        z-index: 99999;
+                        z-index: 9;
 
                         .slider-number {
                             &::before {

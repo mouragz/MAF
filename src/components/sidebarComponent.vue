@@ -3,6 +3,7 @@
     <transition name="slide">
       <div v-if="sidebarOpened" class="sidebar-panel">
         <slot></slot>
+        <div @click="toggle" class="close"></div>
       </div>
     </transition>
   </div>
@@ -13,7 +14,11 @@ export default {
   data() {
     return {};
   },
-  methods: {},
+  methods: {
+    toggle() {
+      this.$emit("OpenSidebar");
+    },
+  },
 };
 </script>
 <style lang="scss">
