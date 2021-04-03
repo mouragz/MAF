@@ -1,28 +1,38 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <upperComponent @OpenSidebar="OpenSidebar" />
+    <lowerComponent />
+    <sidebarComponent @OpenSidebar="OpenSidebar" :sidebarOpened="isSidebarOpened">
+      <ul class="sidebar-panel-nav">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </sidebarComponent>
   </div>
 </template>
-
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import upperComponent from "./components/upperComponent";
+import lowerComponent from "./components/lowerComponent";
+import sidebarComponent from "./components/sidebarComponent";
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  name: "App",
+  data() {
+    return {
+      isSidebarOpened: false,
+    };
+  },
+  components: { upperComponent, lowerComponent, sidebarComponent },
+  methods: {
+    OpenSidebar() {
+      this.isSidebarOpened = !this.isSidebarOpened;
+    },
+  },
+  created() {},
+};
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="scss">
+@import "./assets/scss/shared";
 </style>
